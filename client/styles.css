@@ -4,13 +4,13 @@
 
 
 body{
-    background-image: url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F7a%2F63%2Fd4%2F7a63d4c91a83613b8088c9cde3f3ceaf.gif&f=1&nofb=1&ipt=f0780c3e941d173d50069a92b74e663b96dba26216497c2d3455cca8f18b7d88&ipo=images);
+    background-image: url(https://wallpaperaccess.com/full/3276390.jpg);
     background-size: cover;
 }
 #gameDiv{
-    border-color: black;
+    border-color: rgb(255, 136, 0);
     border-width: 2px;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
     display: none;
     padding: 0px;
     margin: 0 auto;
@@ -26,21 +26,21 @@ body{
     font-size: 20px;
 }
 #msg{
-    color: white;
+    color: rgb(255, 136, 0);
     font-weight: bold;
     font-size: 60px;
     margin-bottom: 30px;
 }
 .signIn{
-    color: white;
+    color: rgb(255, 136, 0);
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     position: relative;
     text-align: left;
     margin-left: 45%;
 }
 button {
-    background-color: #ffffff;  /* Green background */
-    color: rgb(0, 0, 0);               /* White text */
+    background-color: #000000;  /* Green background */
+    color: rgb(255, 136, 0);               /* White text */
     border: none;               /* No border */
     padding: 15px 32px;         /* Padding inside the button */
     text-align: center;         /* Center align the text */
@@ -49,7 +49,7 @@ button {
     font-size: 16px;            /* Font size */
     margin: 4px 2px;            /* Margin around the button */
     cursor: pointer;           /* Change cursor to pointer */
-    border: 2px solid #000000;
+    border: 2px solid rgb(255, 136, 0);
     border-width: 2px;    
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
 
@@ -59,39 +59,38 @@ button {
 
 /* Hover effect for button */
 button:hover {
-    background-color: #000000;  /* Slightly darker green on hover */
-    border-color: #ffffff;
-    color: white;
+    background-color: rgb(255, 136, 0);  /* Slightly darker green on hover */
+    border-color: #000000;
+    color: rgb(0, 0, 0);
 }
 
 /* Active state (when clicked) */
 button:active {
-    background-color: #ff0000;  /* Even darker green when clicked */
+    background-color: #ffe600;  /* Even darker green when clicked */
 }
 input{
-    background-color: #ffffff;  /* Green background */
-    color: rgb(0, 0, 0);               /* White text */
-    border: none;               /* No border */
+    background-color: #000000;  /* Green background */
+    color: rgb(255, 136, 0);               /* White text */            /* No border */
     padding: 9px 3px;         /* Padding inside the button */
     text-decoration: none;      /* No underline */
     display: inline-block;      /* Inline block style */
     font-size: 16px;            /* Font size */
     margin: 4px 2px;            /* Margin around the button */
     cursor: pointer;           /* Change cursor to pointer */
-    border: 2px solid #000000;
+    border: 2px solid rgb(255, 136, 0);
     border-width: 2px;
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
     transition: background-color 0.3s ease; /* Smooth transition for hover effect */   
 }
 input:hover {
     background-color: #000000;  /* Slightly darker green on hover */
-    border-color: #ffffff;
-    color: white;
+    border-color: #ffd900;
+    color: rgb(255, 208, 0);
 }
 
 /* Active state (when clicked) */
 input:active {
-    background-color: #ff0000;  /* Even darker green when clicked */
+    background-color: #ffe600;  /* Even darker green when clicked */
 }
 #status{
     position: relative;
@@ -119,6 +118,7 @@ input:active {
     display: none;
 }
 #infoBox{
+    color: rgb(255, 136, 0);
     position: relative;
     padding:7px;
     margin-top: 30px;
@@ -126,7 +126,7 @@ input:active {
     margin-right: 35%;
     text-align: left;
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
-    background-color: white;
+    background-color: rgb(0, 0, 0);
     font-weight: bold;
 }
 #signDiv-signUpAsGuest{
