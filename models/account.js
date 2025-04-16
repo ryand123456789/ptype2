@@ -31,6 +31,11 @@ var accountData = new Schema(
             type: String,
             required: true
         },
+        color_scheme:
+        {
+            type: String,
+            required: true
+        },
         playerId: {
             type: Number
         },
@@ -42,6 +47,10 @@ var accountData = new Schema(
         currencyAmount:
         {
             type: Number
+        },
+        rank:
+        {
+            type: String,
         }
 
     },{timestamps: true}

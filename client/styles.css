@@ -4,7 +4,7 @@
 
 
 body{
-    background-image: url(https://wallpaperaccess.com/full/3276390.jpg);
+    background-image: url(https://i.pinimg.com/originals/3a/44/3d/3a443d0538b33d910c6e701dd6423fb7.gif);
     background-size: cover;
 }
 #gameDiv{
@@ -38,7 +38,7 @@ body{
     text-align: left;
     margin-left: 45%;
 }
-button {
+.button {
     background-color: #000000;  /* Green background */
     color: rgb(255, 136, 0);               /* White text */
     border: none;               /* No border */
@@ -58,14 +58,14 @@ button {
 }
 
 /* Hover effect for button */
-button:hover {
+.button:hover {
     background-color: rgb(255, 136, 0);  /* Slightly darker green on hover */
     border-color: #000000;
     color: rgb(0, 0, 0);
 }
 
 /* Active state (when clicked) */
-button:active {
+.button:active {
     background-color: #ffe600;  /* Even darker green when clicked */
 }
 input{
@@ -175,8 +175,8 @@ input:active {
 }
 #playerBg{
     position: absolute;
-    background-color: rgb(0, 0, 0);
-    bottom: 10%;
+    background-color: rgb(255, 255, 255);
+    bottom: 35%;
     left: 25%;
     right: 25%;
     width: 50%;
@@ -185,9 +185,72 @@ input:active {
 #playerSkin{
     position: absolute;
     background-color: lime;
-    bottom: 15%;
+    bottom: 40%;
     left: 30%;
     right: 30%;
     width: 40%;
     height: 40%;
 }
+#playerName
+{
+    position: absolute;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    bottom: 15%;
+    left: 20%;
+    right: 20%;
+    width: 60%;
+    height: 15%;
+    border: 2px solid rgb(255, 255, 255);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+}
+#leveling{
+    margin: 150px;
+}
+#levelSection {
+    background-color: #323232;
+    border: 10px solid #323232;
+    border-radius: 10px;
+    margin-left:100px;
+    margin-right:100px;
+    display: grid;
+    grid-template-columns: repeat(5, 80px); /* 5 buttons per row */
+    grid-gap: 80px;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 50px;
+    font-weight: bold;
+    padding: 2%;
+    padding-right: 5%;
+}
+#levelTitle{
+    display:flex;
+    color: rgb(255, 111, 0);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 90px;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+}
+.level{
+    margin: 10px;
+    display: flex;
+    justify-content: center;   /* horizontal center */
+    align-items: center; 
+    width: 100px;
+    height: 100px;
+    color: rgb(255, 111, 0);
+    border: none;
+    cursor: pointer;
+    transition: 0.2s;
+    border: 10px solid rgb(255, 111, 0);
+    background-color: rgba(0, 0, 0, 0);
+    text-align: center;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3), -4px -4px 10px rgba(0, 0, 0, 0.2);
+  }
