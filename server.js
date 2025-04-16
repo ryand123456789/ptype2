@@ -25,23 +25,24 @@ var socket_index = 0; //goes from zero to up, depending on the amount of players
 var io = require('socket.io')(serv,{});
 io.sockets.on('connection', function(socket) {
     socket.on('signIn', async function(data){
-        var felix = checkUserCredentials(data.username, data.password)
-        if(await felix === true)
-        {
-            //connect the player, with his loaded data
-            await socket.emit('signInResponse',{success:true})
-            var userData = loadData(data.username);
-            if(userData){
-                socket.emit('user-data', userData); //emitting user data to the client
+        const isValid = await checkUserCredentials(data.username, data.password);
+        
+        if (isValid) {
+            const userData = await loadData(data.username); // wait for user data before proceeding
+    
+            if (userData) {
+                socket.emit('user-data', userData); // send data first
+                socket.emit('signInResponse', { success: true }); // THEN tell client sign-in was successful
+                console.log("emitted userData:", userData);
+            } else {
+                socket.emit('signInResponse', { success: false });
+                console.log("User data failed to load");
             }
-            console.log("if true runs")
+        } else {
+            socket.emit('signInResponse', { success: false });
+            console.log("Invalid credentials");
         }
-        else{
-            await socket.emit('signInResponse',{success:false}) //bad sign in attempt
-            console.log("else runs")
-        }
-
-    })
+    });    
     socket.on('signUp', async function(data){
         var felix = validAccountCreation(data);
         console.log(felix + " this is the felix");
@@ -123,7 +124,8 @@ var validAccountCreation = async function(data){
                     current_skin: "blue",
                     playerId: Math.random(),
                     itemIDs: [1, 2, 3, 101],
-                    currency: 10
+                    currency: 10,
+                    color_scheme:"black"
                 })
                 account.save();/*
                 .then((result) => {
@@ -143,10 +145,10 @@ async function loadData(username) {
         const user = await Account.findOne({ username: username });  // Query by username
         if (user) {
             console.log('User found:', user);
+            return user;
         } else {
             console.log('User not found');
         }
-        return user;
     } catch (error) {
         console.error('Error finding user:', error);
     }

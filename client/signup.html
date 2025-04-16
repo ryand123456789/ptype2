@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.8.1/socket.io.js"></script> <!-- socket.io scripot-->
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div id = "welcome">
+        <div id="msg"> Welcome to ptype2!</div>
+        <div class = "signIn">
+            <div>Username:</div> 
+            <input id="signDiv-username" type="text"></input>
+            <div>Password:</div> 
+            <input id="signDiv-password" type="password"></input><br>
+            <div>Confirm Password:</div> 
+            <input id="signDiv-password-confirm" type="password"></input><br>
+            <button id="signDiv-signUp">Sign Up</button>
+        </div>
+        <div id="status">
+            Passwords don't match or the username is already taken.
+        </div>
+        <div id="status1">
+            Account Created Successfully. Sign in on the main page.
+        </div>
+        <div id="infoBox">
+            Try to enter a username and password you'll remember. If you would like to sign in as a guest press the button below. Note you will not have saved data.
+        </div>
+    </div>
+    <script type="module">
+
+        document.addEventListener('DOMContentLoaded', function () {
+        var socket = io(); // the player connects to the server
+    
+        // Getting elements from the DOM
+        var welcomeBox = document.getElementById('welcome');
+        var signDiv = document.getElementById('signDiv');
+        var signDivUsername = document.getElementById('signDiv-username');
+        var signDivPassword = document.getElementById('signDiv-password');
+        var signDivPasswordConfirm = document.getElementById('signDiv-password-confirm');
+        var signDivSignIn = document.getElementById('signDiv-signIn');
+        var signDivSignUp = document.getElementById('signDiv-signUp');
+        var status = document.getElementById("status");
+
+        // Checking if 'status' exists
+        console.log(status);
+
+        signDivSignUp.onclick = function() { 
+            socket.emit('signUp', {username: signDivUsername.value, password: signDivPassword.value, passwordConfirm: signDivPasswordConfirm.value});
+        };
+
+        socket.on('signUpResponse', function(data) {
+            console.log(data);
+            if (data.success === true) {
+                status1.style.display = 'inline-block'; 
+                status.style.display = 'none'; 
+                //window.location.href='./add-account';
+            } else {
+                status.style.display = 'inline-block';
+                status1.style.display = 'none'; 
+            }
+        });
+});
+    </script>
+   </body>
