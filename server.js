@@ -4,7 +4,7 @@ var serv = require('http').Server(app);
 var mongoose = require('mongoose');
 var Account = require("./models/account")
 //connects to mongodb our database
-var dbURI = 'mongodb+srv://rdabek52:force52@userdata.ezv7c.mongodb.net/UserData?retryWrites=true&w=majority';
+var dbURI = 'mongodb+srv://rdabek52:force52@userdata.ezv7c.mongodb.net/';
 mongoose.connect(dbURI)
     .then((result) => console.log('connected to db')) //should put serv.listen in here too
     .catch((err) => console.log(err));
