@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard Event Listeners</title>
+</head>
+<body>
+
+<h1>Press any key</h1>
+
+<script>
+    // Keydown event
+    document.addEventListener('keydown', function(event) {
+        console.log(`Key pressed: ${event.key}`);
+    });
+
+    // Keyup event
+    document.addEventListener('keyup', function(event) {
+        console.log(`Key released: ${event.key}`);
+    });
+
+    // Specific key event: Detect if the "Enter" key is pressed
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {
+            alert('Enter key was pressed!');
+        }
+    });
+</script>
+
+</body>
+</html>
